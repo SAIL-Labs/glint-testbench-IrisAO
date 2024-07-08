@@ -15,6 +15,7 @@
 # - MirrorCommand (supported commands: MirrorInitSettings and MirrorSendSettings)
 #--------------------------------------------------------------
 
+#from IrisAO_PythonAPI import IrisAO_Python as IAOW
 import IrisAO_Python as IAOW
 
 
