@@ -16,8 +16,7 @@
 mirror_num = 'FSC37-01-11-1614'
 driver_num = '05160023'
 nbSegments = 37  # 37 for PTT111, 169 for PTT489
-disableHW = False
-
+disableHW = True
 
 # Import control functions from the package
 import IrisAO_PythonAPI  as IrisAO_API
@@ -46,10 +45,11 @@ if resp not in ['y','Y']:
 # Initialisation file numbers
 print( "\n\n*** Mirror connect (",nbSegments,"segments)")
 
-
 # Connect to a mirror: get a mirror handle
 try:
-	mirror = IrisAO_API.MirrorConnect(mirror_num,driver_num,disableHW)
+	import ipdb; ipdb.set_trace()
+	#mirror = IrisAO_API.MirrorConnect(mirror_num,driver_num,disableHW)
+	mirror = IrisAO_API.MirrorConnect(mirror_num.encode('utf-8'),driver_num.encode('utf-8'),disableHW) # inserted by ES
 except Exception as e:
 	print( e)
 	sys.exit("There was a problem connecting to the mirror, exiting")
