@@ -13,9 +13,9 @@
 
 
 # CHANGE PARAMETERS HERE
-mirror_num = 'PWA163-05-04-0405'
-driver_num = '12140002'
-nbSegments = 169  # 37 for PTT111, 169 for PTT489
+mirror_num = 'FSC37-01-11-1614'
+driver_num = '05160023'
+nbSegments = 37  # 37 for PTT111, 169 for PTT489
 disableHW = True
 
 
@@ -27,56 +27,56 @@ import sys
 
 # Prompt configuration
 
-print "\n****************************************************************"
-print "*                IrisAO Mirror control example"
-print "*                     Flatten the mirror"
-print "****************************************************************\n"
-print "Current configuration:"
-print "  Mirror number: ",mirror_num
-print "  Driver box number: ",driver_num
+print("\n****************************************************************")
+print("*                IrisAO Mirror control example"					)
+print("*                     Flatten the mirror"						)
+print("****************************************************************\n")
+print("Current configuration:")
+print("  Mirror number: ",mirror_num)
+print("  Driver box number: ",driver_num)
 
-resp = raw_input("\nIs this the right combination of mirror and driver numbers? [y/n]\n")
+resp = input("\nIs this the right combination of mirror and driver numbers? [y/n]\n")
 if resp not in ['y','Y']:
-	print "\nPlease change the settings in the file Flatten_mirror.py"
-	print "The example program is terminating\n\n"
+	print("\nPlease change the settings in the file Flatten_mirror.py")
+	print("The example program is terminating\n\n")
 	sys.exit()
 
 
 
 
 # Initialisation file numbers
-print "\n*** Mirror connect (",nbSegments,"segments)"
+print("\n*** Mirror connect (",nbSegments,"segments)")
 
 
 # Connect to a mirror: get a mirror handle
 try:
 	mirror = IrisAO_API.MirrorConnect(mirror_num,driver_num,disableHW)
 except Exception as e:
-	print e
+	print(e)
 	sys.exit("There was a problem connecting to the mirror")
 		
-print "Connection to the mirror: " , mirror
+print("Connection to the mirror: " , mirror)
 
 # Flatten the mirror
-print "\n*** Reset all mirrors"
+print("\n*** Reset all mirrors")
 
 try:
 	# Send the settings to the mirror
 	IrisAO_API.MirrorCommand(mirror, IrisAO_API.MirrorInitSettings)
 except Exception as e:
-	print e,type(e)
+	print(e,type(e))
 	sys.exit('There was a problem sending settings to the mirror')
-print "...done"
+print("...done")
 
-raw_input("\n Press 'enter' to terminate\n\n")
+input("\n Press 'enter' to terminate\n\n")
 
 
 
 # Release the mirror handle
-print "\n*** Mirror release"
+print("\n*** Mirror release")
 try:
-	print "result: ", IrisAO_API.MirrorRelease(mirror)
+	print("result: ", IrisAO_API.MirrorRelease(mirror))
 except Exception as e:
-	print e
+	print(e)
 	sys.exit("There was a problem releasing the connection")
 	

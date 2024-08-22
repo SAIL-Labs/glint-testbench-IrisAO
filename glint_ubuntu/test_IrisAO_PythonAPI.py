@@ -23,6 +23,7 @@ import IrisAO_PythonAPI  as IrisAO_API
 
 import time
 import sys
+import ipdb
 
 # Prompt configuration
 print( "\n****************************************************************")
@@ -47,7 +48,7 @@ print( "\n\n*** Mirror connect (",nbSegments,"segments)")
 
 # Connect to a mirror: get a mirror handle
 try:
-	import ipdb; ipdb.set_trace()
+	ipdb.set_trace()
 	#mirror = IrisAO_API.MirrorConnect(mirror_num,driver_num,disableHW)
 	mirror = IrisAO_API.MirrorConnect(mirror_num.encode('utf-8'),driver_num.encode('utf-8'),disableHW) # inserted by ES
 except Exception as e:
