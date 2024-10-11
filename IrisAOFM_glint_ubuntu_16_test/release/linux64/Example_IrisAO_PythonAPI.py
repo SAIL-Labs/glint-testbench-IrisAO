@@ -130,7 +130,8 @@ except Exception as e:
 print "\n*** Get position: list of segments [1,2,3]"
 
 try:
-	positions,locked,reachable = IrisAO_API.GetMirrorPosition(mirror,[1,2,3])
+	#positions,locked,reachable = IrisAO_API.GetMirrorPosition(mirror,[1,2,3])
+	positions,locked,reachable = IrisAO_API.GetMirrorPosition(mirror,list(range(1, 177)))
 	print(positions)
 	print(len(positions))
 	print "Position segment 1: ",positions[0]
