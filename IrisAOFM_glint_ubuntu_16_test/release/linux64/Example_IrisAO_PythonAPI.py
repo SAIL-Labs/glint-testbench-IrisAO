@@ -208,8 +208,8 @@ for step_num in range(0,15):
 			tilt = 2
 		elif step_num%2 == 1:
 			tilt = 0.00
-		
-		IrisAO_API.SetMirrorPosition(mirror, [1,6,7,9,15,19,22,29], [(0.0,2,0.0),(0.0,2,0.0),(0.0,2,0.0),(0.0,2,0.0),(0.0,2,0.0),(0.0,2,0.0),(0.0,2,0.0),(0.0,2,0.0),(0.0,2,0.0)])
+		raw_input("\n Press 'enter' to continue loop\n\n")
+		IrisAO_API.SetMirrorPosition(mirror, [1,6,7,9,15,19,22,29], [(0.0,tilt,0.0),(0.0,tilt,0.0),(0.0,tilt,0.0),(0.0,tilt,0.0),(0.0,tilt,0.0),(0.0,tilt,0.0),(0.0,tilt,0.0),(0.0,tilt,0.0),(0.0,tilt,0.0)])
 		print('test')
 		# Send the settings to the mirror
 		IrisAO_API.MirrorCommand(mirror, IrisAO_API.MirrorSendSettings)
