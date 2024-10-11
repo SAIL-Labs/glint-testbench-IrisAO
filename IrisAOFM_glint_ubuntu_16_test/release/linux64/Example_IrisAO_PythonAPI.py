@@ -214,7 +214,7 @@ for step_num in range(0,15):
 		# Send the settings to the mirror
 		IrisAO_API.MirrorCommand(mirror, IrisAO_API.MirrorSendSettings)
 		print "...done"
-		print "New position: ",IrisAO_API.GetMirrorPosition(mirror, seg_num)[0]
+		print "New position: ",IrisAO_API.GetMirrorPosition(mirror, 1)[0]
 	except Exception as e:
 		print e
 		print "There was a problem of communication with the mirror"
