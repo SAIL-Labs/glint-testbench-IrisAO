@@ -16,7 +16,7 @@
 mirror_num = 'FSC37-01-11-1614'
 driver_num = '05160023'
 nbSegments = 37  # 37 for PTT111, 169 for PTT489
-disableHW = True
+disableHW = False
 
 
 # Import control functions from the package
