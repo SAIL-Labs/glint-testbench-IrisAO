@@ -201,7 +201,7 @@ for seg_num in range(0,37):
 '''
 
 # Set the position of one segment
-print "\n*** Set mirror position: all segments, in one direction"
+print "\n*** Set mirror position: several segments, in one direction"
 for step_num in range(0,15):
 	try:
 		if step_num%2 == 0:
@@ -209,7 +209,7 @@ for step_num in range(0,15):
 		elif step_num%2 == 1:
 			tilt = 0.00
 		
-		IrisAO_API.SetMirrorPosition(mirror, list(range(37)), (0.10,tilt,0.12))
+		IrisAO_API.SetMirrorPosition(mirror, (1,3,4,6,7,8,9,15,19,22), [(0.0,2,0.0),(0.0,2,0.0),(0.0,2,0.0),(0.0,2,0.0),(0.0,2,0.0),(0.0,2,0.0),(0.0,2,0.0),(0.0,2,0.0),(0.0,2,0.0),(0.0,2,0.0),(0.0,2,0.0)])
 		print('test')
 		# Send the settings to the mirror
 		IrisAO_API.MirrorCommand(mirror, IrisAO_API.MirrorSendSettings)
