@@ -128,9 +128,10 @@ except Exception as e:
 
 #Get the position of a list of segments
 print "\n*** Get position: list of segments [1,2,3]"
+import ipdb; ipdb.set_trace()
 try:
 	positions,locked,reachable = IrisAO_API.GetMirrorPosition(mirror,[1,2,3])
-	import ipdb; ipdb.set_trace()
+	
 	print "Position segment 1: ",positions[0]
 	print "Position segment 2: ",positions[1]
 	print "Position segment 3: ",positions[2]
