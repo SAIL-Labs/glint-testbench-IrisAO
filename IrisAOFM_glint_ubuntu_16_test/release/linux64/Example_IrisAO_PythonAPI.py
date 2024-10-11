@@ -209,8 +209,8 @@ for step_num in range(0,15):
 			tilt = 0.40
 		elif step_num%2 == 1:
 			tilt = 0.00
-		print "Segment 1 set to (0.10 um,"+tilt+",0.12 mrad)"
-		IrisAO_API.SetMirrorPosition(mirror, seg_num, (0.10,tilt,0.12))
+		print "Segment 1 set to (0.10 um,"+str(tilt)+",0.12 mrad)"
+		IrisAO_API.SetMirrorPosition(mirror, 1, (0.10,tilt,0.12))
 		# Send the settings to the mirror
 		IrisAO_API.MirrorCommand(mirror, IrisAO_API.MirrorSendSettings)
 		print "...done"
