@@ -135,37 +135,37 @@ except Exception as e:
 print "\n*** Get position: list of segments [1,2,3]"
 
 try:
-	#positions,locked,reachable = IrisAO_API.GetMirrorPosition(mirror,[1,2,3])
-	positions,locked,reachable = IrisAO_API.GetMirrorPosition(mirror,list(range(1, 177)))
+	positions,locked,reachable = IrisAO_API.GetMirrorPosition(mirror,[1,2,3])
+	#positions,locked,reachable = IrisAO_API.GetMirrorPosition(mirror,list(range(1, 177)))
 	print(positions)
 	print(len(positions))
 	print "Position segment 1: ",positions[0]
 	print "Position segment 2: ",positions[1]
 	print "Position segment 3: ",positions[2]
-	print "Position segment 31: ",positions[30]
-	print "Position segment 52: ",positions[51]
-	print "Position segment 63: ",positions[62]
-	print "Position segment 131: ",positions[130]
-	print "Position segment 152: ",positions[151]
-	print "Position segment 163: ",positions[162]
+	#print "Position segment 31: ",positions[30]
+	#print "Position segment 52: ",positions[51]
+	#print "Position segment 63: ",positions[62]
+	#print "Position segment 131: ",positions[130]
+	#print "Position segment 152: ",positions[151]
+	#print "Position segment 163: ",positions[162]
 	print "Segment 1 locked: ",locked[0]
 	print "Segment 2 locked: ",locked[1]
 	print "Segment 3 locked: ",locked[2]
-	print "Segment 31 locked: ",locked[30]
-	print "Segment 52 locked: ",locked[51]
-	print "Segment 63 locked: ",locked[62]
-	print "Segment 131 locked: ",locked[130]
-	print "Segment 152 locked: ",locked[151]
-	print "Segment 163 locked: ",locked[162]
+	#print "Segment 31 locked: ",locked[30]
+	#print "Segment 52 locked: ",locked[51]
+	#print "Segment 63 locked: ",locked[62]
+	#print "Segment 131 locked: ",locked[130]
+	#print "Segment 152 locked: ",locked[151]
+	#print "Segment 163 locked: ",locked[162]
 	print "Segment 1 reachable: ",reachable[0]
 	print "Segment 2 reachable: ",reachable[1]
 	print "Segment 3 reachable: ",reachable[2]
-	print "Segment 31 reachable: ",reachable[30]
-	print "Segment 52 reachable: ",reachable[51]
-	print "Segment 63 reachable: ",reachable[62]
-	print "Segment 131 reachable: ",reachable[130]
-	print "Segment 152 reachable: ",reachable[151]
-	print "Segment 163 reachable: ",reachable[162]
+	#print "Segment 31 reachable: ",reachable[30]
+	#print "Segment 52 reachable: ",reachable[51]
+	#print "Segment 63 reachable: ",reachable[62]
+	#print "Segment 131 reachable: ",reachable[130]
+	#print "Segment 152 reachable: ",reachable[151]
+	#print "Segment 163 reachable: ",reachable[162]
 except Exception as e:
 	print e
 	print "There was an error reading from the mirror"
@@ -185,16 +185,17 @@ except Exception as e:
 	
 # Set the position of one segment
 print "\n*** Set mirror position: one segment"
-try:
-	print "Segment 1 set to (0.10 um,0.11 mrad,0.12 mrad)"
-	IrisAO_API.SetMirrorPosition(mirror, 1, (0.10,0.11,0.12))
-	# Send the settings to the mirror
-	IrisAO_API.MirrorCommand(mirror, IrisAO_API.MirrorSendSettings)
-	print "...done"
-	print "New position: ",IrisAO_API.GetMirrorPosition(mirror, 1)[0]
-except Exception as e:
-	print e
-	print "There was a problem of communication with the mirror"
+for seg_num in range(0,37):
+	try:
+		print "Segment " +str(seg_num)+ " set to (0.10 um,0.11 mrad,0.12 mrad)"
+		IrisAO_API.SetMirrorPosition(mirror, seg_num, (0.10,0.11,0.12))
+		# Send the settings to the mirror
+		IrisAO_API.MirrorCommand(mirror, IrisAO_API.MirrorSendSettings)
+		print "...done"
+		print "New position: ",IrisAO_API.GetMirrorPosition(mirror, seg_num)[0]
+	except Exception as e:
+		print e
+		print "There was a problem of communication with the mirror"
 
 
 
