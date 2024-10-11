@@ -206,7 +206,7 @@ for seg_num in range(0,5):
 	raw_input("\n Press 'enter' to loop over next segment\n\n")
 	try:
 		print "Segment 1 set to (0.10 um,0."+str(0.1*seg_num)+" mrad,0.12 mrad)"
-		IrisAO_API.SetMirrorPosition(mirror, seg_num, (0.10,0.1*seg_num,0.12))
+		IrisAO_API.SetMirrorPosition(mirror, seg_num, (0.10,float(0.1*seg_num),0.12))
 		# Send the settings to the mirror
 		IrisAO_API.MirrorCommand(mirror, IrisAO_API.MirrorSendSettings)
 		print "...done"
