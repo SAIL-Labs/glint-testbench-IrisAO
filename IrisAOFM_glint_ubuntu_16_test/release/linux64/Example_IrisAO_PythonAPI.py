@@ -73,6 +73,9 @@ print "\n*** Set modal position: one coefficient"
 print "Coefficient 4 (focus) set to 0.30 um rms"
 try:
 	print "Initial position of segment 1: ", IrisAO_API.GetMirrorPosition(mirror, 1)[0]
+except Exception as e:
+	print e
+	print "There was an error reading from the mirror"
 try:
 	IrisAO_API.SetModalPosition(mirror, (4,0.30))
 	# Send the settings to the mirror
