@@ -183,13 +183,30 @@ except Exception as e:
 	print "There was an error sending parameters to the mirror"
 	
 	
-# Set the position of one segment
-print "\n*** Set mirror position: one segment"
+# Set the position of all segments in loop
+'''
+print "\n*** Set mirror position: all segments in loop"
 for seg_num in range(0,37):
 	raw_input("\n Press 'enter' to loop over next segment\n\n")
 	try:
 		print "Segment " +str(seg_num)+ " set to (0.10 um,0.11 mrad,0.12 mrad)"
 		IrisAO_API.SetMirrorPosition(mirror, seg_num, (0.10,0.11,0.12))
+		# Send the settings to the mirror
+		IrisAO_API.MirrorCommand(mirror, IrisAO_API.MirrorSendSettings)
+		print "...done"
+		print "New position: ",IrisAO_API.GetMirrorPosition(mirror, seg_num)[0]
+	except Exception as e:
+		print e
+		print "There was a problem of communication with the mirror"
+'''
+
+# Set the position of one segment
+print "\n*** Set mirror position: one segment"
+for seg_num in range(0,5):
+	raw_input("\n Press 'enter' to loop over next segment\n\n")
+	try:
+		print "Segment 1 set to (0.10 um,0."+str(0.1*seg_num)+" mrad,0.12 mrad)"
+		IrisAO_API.SetMirrorPosition(mirror, seg_num, (0.10,0.1*seg_num,0.12))
 		# Send the settings to the mirror
 		IrisAO_API.MirrorCommand(mirror, IrisAO_API.MirrorSendSettings)
 		print "...done"
