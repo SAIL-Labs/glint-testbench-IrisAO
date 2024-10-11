@@ -206,7 +206,7 @@ for step_num in range(0,15):
 	raw_input("\n Press 'enter' to loop over next segment\n\n")
 	try:
 		if step_num%2 == 0:
-			tilt = 0.40
+			tilt = 2
 		elif step_num%2 == 1:
 			tilt = 0.00
 		print "Segment 1 set to (0.10 um,"+str(tilt)+",0.12 mrad)"
