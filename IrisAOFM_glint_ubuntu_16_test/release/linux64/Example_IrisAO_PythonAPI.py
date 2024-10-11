@@ -72,6 +72,8 @@ raw_input("\n Press 'enter' to continue\n\n")
 print "\n*** Set modal position: one coefficient"
 print "Coefficient 4 (focus) set to 0.30 um rms"
 try:
+	print "Initial position of segment 1: ", IrisAO_API.GetMirrorPosition(mirror, 1)[0]
+try:
 	IrisAO_API.SetModalPosition(mirror, (4,0.30))
 	# Send the settings to the mirror
 	IrisAO_API.MirrorCommand(mirror, IrisAO_API.MirrorSendSettings)
