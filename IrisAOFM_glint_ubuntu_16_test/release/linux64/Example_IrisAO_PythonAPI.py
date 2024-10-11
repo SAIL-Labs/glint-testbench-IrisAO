@@ -13,9 +13,9 @@
 
 
 # CHANGE PARAMETERS HERE
-mirror_num = 'PWA163-04-02-0702'
-driver_num = '03160009'
-nbSegments = 169  # 37 for PTT111, 169 for PTT489
+mirror_num = 'FSC37-01-11-1614'
+driver_num = '05160023'
+nbSegments = 37  # 37 for PTT111, 169 for PTT489
 disableHW = True
 
 
