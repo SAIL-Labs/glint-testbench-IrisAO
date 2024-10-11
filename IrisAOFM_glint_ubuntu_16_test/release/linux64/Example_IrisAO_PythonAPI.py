@@ -202,13 +202,15 @@ for seg_num in range(0,37):
 
 # Set the position of one segment
 print "\n*** Set mirror position: one segment"
-for seg_num in range(1,5):
+for step_num in range(0,15):
 	raw_input("\n Press 'enter' to loop over next segment\n\n")
 	try:
-		print(seg_num)
-		print(0.1*seg_num)
-		print "Segment 1 set to (0.10 um,0."+str(0.1*seg_num)+" mrad,0.12 mrad)"
-		IrisAO_API.SetMirrorPosition(mirror, seg_num, (0.10,float(0.1*seg_num),0.12))
+		if step_num%2 == 0:
+			tilt = 0.40
+		elif step_num%2 == 1:
+			tilt = 0.00
+		print "Segment 1 set to (0.10 um,"+tilt+",0.12 mrad)"
+		IrisAO_API.SetMirrorPosition(mirror, seg_num, (0.10,tilt,0.12))
 		# Send the settings to the mirror
 		IrisAO_API.MirrorCommand(mirror, IrisAO_API.MirrorSendSettings)
 		print "...done"
