@@ -202,7 +202,7 @@ for seg_num in range(0,37):
 
 # Set the position of one segment
 print "\n*** Set mirror position: one segment"
-for seg_num in range(0,5):
+for seg_num in range(1,5):
 	raw_input("\n Press 'enter' to loop over next segment\n\n")
 	try:
 		print "Segment 1 set to (0.10 um,0."+str(0.1*seg_num)+" mrad,0.12 mrad)"
