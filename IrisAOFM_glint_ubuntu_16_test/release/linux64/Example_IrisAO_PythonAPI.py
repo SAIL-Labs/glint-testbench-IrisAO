@@ -184,7 +184,7 @@ except Exception as e:
 	
 	
 # Set the position of all segments in loop
-'''
+
 print "\n*** Set mirror position: all segments in loop"
 for seg_num in range(0,37):
 	raw_input("\n Press 'enter' to loop over next segment\n\n")
@@ -198,7 +198,7 @@ for seg_num in range(0,37):
 	except Exception as e:
 		print e
 		print "There was a problem of communication with the mirror"
-'''
+
 
 '''
 # Set the position of one segment
