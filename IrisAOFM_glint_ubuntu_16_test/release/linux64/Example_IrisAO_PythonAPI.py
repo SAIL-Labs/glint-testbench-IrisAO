@@ -200,6 +200,7 @@ for seg_num in range(0,37):
 		print "There was a problem of communication with the mirror"
 '''
 
+'''
 # Set the position of one segment
 print "\n*** Set mirror position: several segments, in one direction"
 for step_num in range(0,15):
@@ -219,7 +220,8 @@ for step_num in range(0,15):
 	except Exception as e:
 		print e
 		print "There was a problem of communication with the mirror"
-
+'''
+		
 '''
 # Set the position of one segment
 print "\n*** Set mirror position: one segment"
