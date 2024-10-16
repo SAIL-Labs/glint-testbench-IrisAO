@@ -220,6 +220,7 @@ for step_num in range(0,15):
 		print e
 		print "There was a problem of communication with the mirror"
 
+'''
 # Set the position of one segment
 print "\n*** Set mirror position: one segment"
 for step_num in range(0,15):
@@ -238,9 +239,9 @@ for step_num in range(0,15):
 	except Exception as e:
 		print e
 		print "There was a problem of communication with the mirror"
+'''
 
-
-
+'''
 raw_input("\n Press 'enter' to continue\n\n")
 
 
@@ -273,3 +274,4 @@ try:
 except Exception as e:
 	print e
 	print "There was a problem releasing the connection with the mirror"
+'''
